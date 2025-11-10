@@ -6,7 +6,6 @@ class AbrirAgendaUI:
     def main():
         st.header("Abrir Minha Agenda")
         st.write("Preencha os campos para inserir horários de atendimento na sua agenda.")
-        # verifica profissional logado
         profissional_id = st.session_state.get("usuario_id")
         if not profissional_id:
             st.warning("Você precisa estar logado como profissional para abrir a agenda.")
@@ -28,7 +27,7 @@ class AbrirAgendaUI:
             horarios_criados = 0
             while dt_inicial < dt_final:
                 View.horario_inserir(dt_inicial, False, None, servico.get_id(), profissional_id)
-                horarios_criados += 1
+                horarios_criados == 1
                 dt_inicial += timedelta(minutes=intervalo)
             st.success(f"{horarios_criados} horários inseridos na agenda!")
             st.rerun()
