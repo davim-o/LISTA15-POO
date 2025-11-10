@@ -17,7 +17,6 @@ from templates.avaliarservicoUI import AvaliarServicoUI
 
 from views import View
 
-# Inicializa session_state para evitar KeyError em reloads
 if "usuario_id" not in st.session_state:
     st.session_state["usuario_id"] = None
 if "usuario_nome" not in st.session_state:

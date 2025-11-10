@@ -16,7 +16,6 @@ class Horario:
         self.__avaliacao = None
         self.__comentario = ""
 
-    # GETTERS
     def get_id(self): return self.__id
     def get_data(self): return self.__data
     def get_confirmado(self): return self.__confirmado
@@ -26,7 +25,6 @@ class Horario:
     def get_avaliacao(self): return self.__avaliacao
     def get_comentario(self): return self.__comentario
 
-    # SETTERS (inclui set_id para compatibilidade com DAO.inserir)
     def set_id(self, id): self.__id = id
     def set_confirmado(self, confirmado): self.__confirmado = confirmado
     def set_id_cliente(self, id_cliente): self.__id_cliente = id_cliente
@@ -38,7 +36,6 @@ class Horario:
     def __str__(self):
         return f"{self.__id} - {self.__data.strftime('%d/%m/%Y %H:%M')} - Confirmado: {self.__confirmado}"
 
-    # Serialização para JSON (formato amigável usado pela UI)
     def to_json(self):
         return {
             "id": self.__id,
@@ -51,7 +48,6 @@ class Horario:
             "comentario": self.__comentario
         }
 
-    # Desserialização a partir do JSON: tentar vários formatos (robusto)
     @classmethod
     def from_json(cls, dic):
         raw = dic.get("data")
@@ -91,11 +87,7 @@ class Horario:
         h.set_comentario(dic.get("comentario", ""))
         return h
 
-# helper opcional para json.dump default
-def horario_to_json(h):
-    if isinstance(h, Horario):
-        return h.to_json()
-    raise TypeError("Type not serializable")
+
 
     @classmethod
     def from_json(cls, dic):

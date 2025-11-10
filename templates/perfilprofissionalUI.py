@@ -13,7 +13,7 @@ class PerfilProfissionalUI:
             st.warning("Nenhum profissional logado.")
             return
 
-        profissional_id = op.get_id()  # ✅ evita erro de variável indefinida
+        profissional_id = op.get_id() 
 
         # Campos de edição do perfil
         nome = st.text_input("Informe o novo nome", op.get_nome())
