@@ -11,7 +11,6 @@ class AbrirContaUI:
         senha = st.text_input("Informe a senha", type="password")
 
         if st.button("Inserir"):
-            # cria cliente com id automático via DAO
             View.cliente_inserir(nome, email, fone, senha)
             st.success("Conta criada com sucesso")
             time.sleep(2)

@@ -14,8 +14,6 @@ class PerfilProfissionalUI:
             return
 
         profissional_id = op.get_id() 
-
-        # Campos de edição do perfil
         nome = st.text_input("Informe o novo nome", op.get_nome())
         email = st.text_input("Informe o novo e-mail", op.get_email())
         especialidade = st.text_input("Informe a nova especialidade", op.get_especialidade())
